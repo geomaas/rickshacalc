@@ -1,11 +1,11 @@
-let app = angular.module('LibraryApp', ['ngRoute', 'RickControllers', 'RickServices']);
+let app = angular.module('RickshawCalc', ['ngRoute', 'RickControllers', 'RickServices']);
 angular.module('RickControllers', []);       // create empty module
-// angular.module('LibraryServices', []);          // create empty module
+angular.module('RickServices', []);          // create empty module
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-        .when('/', {
-            templateUrl: 'templates/available.html',
+        .when('/calc', {
+            templateUrl: 'templates/calc.html',
             controller: 'RickController',
         })
         // .when('/borrowed', {
@@ -19,5 +19,6 @@ require('./controllers/rickcalc');
 // require('./controllers/borrowed');
 
 /* Services */
+require('./services/strava')
 
 /* Directives */

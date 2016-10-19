@@ -2,6 +2,8 @@
 
 let gulp = require('gulp');
 let browserify = require('gulp-browserify');
+let surge = require('gulp-surge');
+
 
 gulp.task('default', ['html', 'css', 'js']);
 
@@ -25,6 +27,13 @@ gulp.task('js', function () {
         .pipe(browserify())
         .pipe(gulp.dest('./public/js'))
 });
+gulp.task('deploy', [], function() {
+    return surge({
+        project: './public', // Path to your static build directory
+        domain: 'whimsical-hour.surge.sh',
+    })
+});
+
 
 gulp.task('watch', function () {
     gulp.watch('./js/*.js', ['js']);

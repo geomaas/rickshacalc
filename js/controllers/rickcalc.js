@@ -1,6 +1,12 @@
-let mod = angular.module('RickControllers');
+let calc = angular.module('RickControllers');
 
-mod.controller('RickController', ['$scope', 'RickService', function ($scope, BookService) {
-    // Get some booooooookie crisp
-    // $scope.books = BookService.getBooks();
+calc.controller('RickController', ['$scope', 'RickService', function ($scope, RickService) {
+
+    // $scope.info = RickService.getInfo();
+    $scope.moneyPerMile = function() {
+      console.log("click");
+      console.log($scope.money / $scope.mileage);
+      return $scope.answer = $scope.money/ $scope.mileage;
+
+    }
 }]);
