@@ -7,7 +7,7 @@ calc.controller('RickController', ['$scope', 'RickService', function ($scope, Ri
     $scope.moneyPerMile = function() {
       console.log("click");
       console.log($scope.money / $scope.mileage);
-      return $scope.answer = $scope.money/ $scope.mileage;
+      $scope.answer = ($scope.money/ $scope.mileage).toFixed(2);
 
     }
 }]);
